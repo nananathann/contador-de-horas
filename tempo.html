@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -8,9 +9,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #ffffff;
-            background-image: url("./teamoss.webp");
-            background-size: 1100px;
+            background-image: url("./tamo.webp");
+            background-size: 200vw 200vh;
             background-repeat: no-repeat;
             background-position: center;
             color: #fff;
@@ -18,12 +18,17 @@
             text-align: center;
         }
         .clock {
-            font-size: 0.8rem;
-            padding: 2px 10px;
+            font-size: 1.4rem;
+            padding: 2px 2px;
             background: #444;
         }
 
         .horas{
+            margin-top: 15rem;
+            display: table-column;
+            justify-content: center;
+            align-items: center;
+            color: rgb(29, 28, 28);
             background: #444;
             border-radius: 10px;
         }
@@ -32,13 +37,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 0.8rem;
-            padding: 2px 10px;
-            color: #ffffff;
+            font-size: 1.6rem;
+            padding: 20px 5px ;
+            color: #cacaca;
             font-family: Arial, sans-serif;
             text-align: center;
         }
-
     </style>
 </head>
 <body> 
@@ -48,26 +52,25 @@
 
     <div class="clock" id="clock">00:00:00</div>
 
-    <h1>desde que começamos a namorar</h1>
+    <h1>desde que começamos a NAMORAR</h1>
 </div>
 
-    
     <script>
         function updateClock() {
-            const startDate = new Date("2024-07-12T00:00:00"); // Data inicial
-            const now = new Date(); // Data atual
-            const diffInSeconds = Math.floor((now - startDate) / 1000); // Diferença total em segundos
+            const startDate = new Date("2024-07-12T00:00:00"); 
+            const now = new Date(); 
+            const diffInSeconds = Math.floor((now - startDate) / 1000); 
             
             let days = String(Math.floor(diffInSeconds / 86400)).padStart(2, '0');
             let hours = String(Math.floor((diffInSeconds % 86400) / 3600)).padStart(2, '0');
             let minutes = String(Math.floor((diffInSeconds % 3600) / 60)).padStart(2, '0');
             let seconds = String(diffInSeconds % 60).padStart(2, '0');
             
-            document.getElementById("clock").textContent = `${days}Dias ${hours} : ${minutes} : ${seconds}`;
+            document.getElementById("clock").textContent = `${days} Dias | ${hours} Hrs | ${minutes} Mins | ${seconds} s.`;
         }
         
         setInterval(updateClock, 1000);
-        updateClock(); // Atualiza imediatamente
+        updateClock(); 
     </script>
 </body>
 </html>
