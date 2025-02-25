@@ -1,0 +1,73 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Personalizado</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            background-image: url("./teamoss.webp");
+            background-size: 1100px;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .clock {
+            font-size: 0.8rem;
+            padding: 2px 10px;
+            background: #444;
+        }
+
+        .horas{
+            background: #444;
+            border-radius: 10px;
+        }
+
+        .horas h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            padding: 2px 10px;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body> 
+
+<div class="horas">
+    <h1>Fazem...</h1>
+
+    <div class="clock" id="clock">00:00:00</div>
+
+    <h1>desde que começamos a namorar</h1>
+</div>
+
+    
+    <script>
+        function updateClock() {
+            const startDate = new Date("2024-07-12T00:00:00"); // Data inicial
+            const now = new Date(); // Data atual
+            const diffInSeconds = Math.floor((now - startDate) / 1000); // Diferença total em segundos
+            
+            let days = String(Math.floor(diffInSeconds / 86400)).padStart(2, '0');
+            let hours = String(Math.floor((diffInSeconds % 86400) / 3600)).padStart(2, '0');
+            let minutes = String(Math.floor((diffInSeconds % 3600) / 60)).padStart(2, '0');
+            let seconds = String(diffInSeconds % 60).padStart(2, '0');
+            
+            document.getElementById("clock").textContent = `${days}Dias ${hours} : ${minutes} : ${seconds}`;
+        }
+        
+        setInterval(updateClock, 1000);
+        updateClock(); // Atualiza imediatamente
+    </script>
+</body>
+</html>
