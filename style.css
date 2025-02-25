@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./tamo.webp");
+    background-size: 200vw 200vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.clock {
+    font-size: 1.4rem;
+    padding: 2px 2px;
+    background: #444;
+}
+
+.horas{
+    margin-top: 15rem;
+    display: table-column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(29, 28, 28);
+    background: #444;
+    border-radius: 10px;
+}
+
+.horas h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    padding: 20px 5px ;
+    color: #cacaca;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
